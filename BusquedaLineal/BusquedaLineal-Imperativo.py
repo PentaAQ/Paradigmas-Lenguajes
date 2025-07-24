@@ -5,7 +5,7 @@ def busqueda_lineal(lista, objetivo):
     return -1 
 
 
-# Ejemplo
+
 datos = [10, 20, 30, 40, 50]
-print(busqueda_lineal(datos, 30))  # Salida: 2
-print(busqueda_lineal(datos, 99))  # Salida: -1
+print(busqueda_lineal(datos, 30))
+print(busqueda_lineal(datos, 99)) 
