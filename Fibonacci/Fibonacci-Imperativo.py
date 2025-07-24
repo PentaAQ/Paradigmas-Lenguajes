@@ -1,26 +1,14 @@
-def es_seguro(colocadas, fila, columna):
-    # Verifica si es seguro poner una reina en (fila, columna)
-    return all(
-        columna != c and
-        abs(columna - c) != fila - f
-        for f, c in enumerate(colocadas)
-    )
+# Ejercicio de Fibonacci con paradigma imperativo
 
-def resolver_n_reinas(n, fila=0, colocadas=()):
-    # Si ya colocamos N reinas, devolvemos la solución
-    if fila == n:
-        return [colocadas]
-    
-    # Intentamos colocar una reina en cada columna posible
-    return [
-        solucion
-        for columna in range(n)
-        if es_seguro(colocadas, fila, columna)
-        for solucion in resolver_n_reinas(n, fila + 1, colocadas + (columna,))
-    ]
+# 'n' representa el número de fibonacci en esa posición
+n = 10
 
-# ---- PROBAR ----
-n = 4
-soluciones = resolver_n_reinas(n)
-for sol in soluciones:
-    print(sol)
+# Asignamos los valores iniciales
+a = 0
+b = 1
+
+# Bucle para sumar los números anteriores
+for _ in range(n):
+    a, b = b, a + b
+
+print(a)
